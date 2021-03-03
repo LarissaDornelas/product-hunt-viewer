@@ -9,6 +9,7 @@ const Container = styled.div`
   background-color: ${theme.colors.primary};
   height: 30px;
   border-radius: 10px;
+  cursor: default;
 
   @media (max-width: 800px) {
     width: 150px;
