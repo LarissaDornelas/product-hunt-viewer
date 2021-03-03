@@ -54,10 +54,4 @@ const CardList = styled.div`
   }
 `;
 
-export const CardContent = styled.div``;
-
-export const ProductImage = styled.div``;
-
-export const Ranking = styled.div``;
-
 export { Container, Header, DataContainer, TabContainer, CardList };

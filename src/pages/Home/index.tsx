@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 
-import { ProfileImage, DateWidget, SearchButton, Tab, Card } from "components";
+import {
+  ProfileImage,
+  DateWidget,
+  SearchButton,
+  Tab,
+  ProductSummary,
+} from "components";
 import {
   Container,
   Header,
@@ -39,7 +45,7 @@ const Home: React.FC = () => {
         </TabContainer>
       </Header>
       <CardList>
-        <Card>Olá</Card>
+        <ProductSummary>fsfs</ProductSummary>
       </CardList>
     </Container>
   );
