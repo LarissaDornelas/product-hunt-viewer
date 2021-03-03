@@ -47,10 +47,10 @@ const CardList = styled.div`
   width: 100%;
   height: 100%;
   padding: 20px;
-  margin: 130px 200px 0 200px;
+  margin: 110px 200px 0 200px;
 
   @media (max-width: 800px) {
-    margin: 130px 0 0 0;
+    margin: 110px 0 0 0;
   }
 `;
 

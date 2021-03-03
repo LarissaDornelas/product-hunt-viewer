@@ -4,5 +4,16 @@ import { SearchButton } from "./SearchButton";
 import { Tab } from "./Tab";
 import { Card } from "./Card";
 import { ProductSummary } from "./ProductSummary";
+import { ProductImage } from "./ProductImage";
+import { VoteButton } from "./VoteButton";
 
-export { ProfileImage, DateWidget, SearchButton, Tab, Card, ProductSummary };
+export {
+  ProfileImage,
+  DateWidget,
+  SearchButton,
+  Tab,
+  Card,
+  ProductSummary,
+  ProductImage,
+  VoteButton,
+};

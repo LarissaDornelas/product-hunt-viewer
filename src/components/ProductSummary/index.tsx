@@ -1,11 +1,10 @@
 import React from "react";
 
-import { Card } from "components/Card";
-import { ProductImage } from "components/ProductImage";
-
-import teste from "assets/images/teste.jpg";
+import { Card, ProductImage, VoteButton } from "components";
 import { ImageSize } from "components/ProductImage/types";
 import { Container, DataContainer } from "./styles";
+
+import teste from "assets/images/teste.jpg";
 
 const ProductSummary: React.FC = () => {
   return (
@@ -26,6 +25,7 @@ const ProductSummary: React.FC = () => {
             PageMaker including versions of Lorem Ipsum.
           </p>
         </DataContainer>
+        <VoteButton votes={769} />
       </Container>
     </Card>
   );

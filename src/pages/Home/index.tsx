@@ -45,7 +45,26 @@ const Home: React.FC = () => {
         </TabContainer>
       </Header>
       <CardList>
-        <ProductSummary>fsfs</ProductSummary>
+        <ProductSummary />
+        <ProductSummary />
+        <ProductSummary />
+        <ProductSummary />
+        <ProductSummary />
+        <ProductSummary />
+        <ProductSummary />
+        <ProductSummary />
+        <ProductSummary />
+        <ProductSummary />
+        <ProductSummary />
+        <ProductSummary />
+        <ProductSummary />
+        <ProductSummary />
+        <ProductSummary />
+        <ProductSummary />
+        <ProductSummary />
+        <ProductSummary />
+        <ProductSummary />
+        <ProductSummary />
       </CardList>
     </Container>
   );

@@ -25,7 +25,7 @@ const TabItem = styled.div<{ active?: boolean }>`
 
   transition: border 0.25s;
   :hover {
-    border-bottom: 3px solid ${theme.colors.secondary};
+    color: ${theme.colors.secondary};
   }
 `;
 

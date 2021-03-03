@@ -1,12 +1,18 @@
 import React from "react";
-import { Search } from "@material-ui/icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 import { Container } from "./styles";
+import { theme } from "styles/theme";
 
 const SearchButton: React.FC = () => {
   return (
     <Container>
-      <Search fontSize="large" color="disabled" />
+      <FontAwesomeIcon
+        icon={faSearch}
+        color={theme.colors.fontPrimary}
+        size="lg"
+      />
     </Container>
   );
 };
