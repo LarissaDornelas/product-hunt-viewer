@@ -5,8 +5,10 @@ import { theme } from "./theme";
 export const GlobalStyle = createGlobalStyle`
 ${normalize}
 *{
-    @import url(../assets/fonts/Roboto-Regular.ttf);
-    font-family: 'Roboto', sans-serif;
+    @import url(../assets/fonts/Pragmatica-ExtraLight.ttf);
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
 }
 
 body{

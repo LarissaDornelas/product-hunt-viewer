@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ProfileImage, DateWidget } from "components";
+import { ProfileImage, DateWidget, SearchButton } from "components";
 import { Container, Header } from "./styles";
 
 const Home: React.FC = () => {
@@ -9,9 +9,9 @@ const Home: React.FC = () => {
       <Header>
         <ProfileImage />
         <DateWidget />
-        {/* <SearchButton />
-     
-      <Tab titles={[]} active={} /> */}
+        <SearchButton />
+
+        {/* <Tab titles={[]} active={} />  */}
       </Header>
     </Container>
   );
