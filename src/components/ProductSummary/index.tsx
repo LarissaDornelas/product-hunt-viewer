@@ -4,28 +4,20 @@ import { Card, ProductImage, VoteButton } from "components";
 import { ImageSize } from "components/ProductImage/types";
 import { Container, DataContainer } from "./styles";
 
-import teste from "assets/images/teste.jpg";
+import { IProductItem } from "components/ProductList/types";
 
-const ProductSummary: React.FC = () => {
+const ProductSummary: React.FC<IProductItem> = (props) => {
+  const { name, description, thumbnail, votesCount } = props;
+
   return (
     <Card>
       <Container>
-        <ProductImage imageUrl={teste} size={ImageSize.MEDIUM} />
+        <ProductImage imageUrl={thumbnail} size={ImageSize.MEDIUM} />
         <DataContainer>
-          <h1>Teste</h1>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.
-          </p>
+          <h1>{name}</h1>
+          <p>{description}</p>
         </DataContainer>
-        <VoteButton votes={769} />
+        <VoteButton votes={+votesCount} />
       </Container>
     </Card>
   );

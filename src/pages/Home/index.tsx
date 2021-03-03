@@ -1,26 +1,27 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { useQuery } from "@apollo/client";
 
-import { ProfileImage, DateWidget, SearchButton, Tab } from "components";
+import {
+  ProfileImage,
+  DateWidget,
+  SearchButton,
+  Tab,
+  ProductList,
+} from "components";
 import { Container, Header, DataContainer, TabContainer } from "./styles";
 import { ITabItem } from "components/Tab/types";
-import { IProductItem, IProductList } from "components/ProductList/types";
-import { GET_POSTS } from "services/queries/post";
+import { IProductItem } from "components/ProductList/types";
+import { useGetPosts } from "hooks/posts/useGetPosts";
+import { Order } from "hooks/posts/types";
 
 const Home: React.FC = () => {
   const [tabs, setTabs] = useState<ITabItem[]>([
-    { title: "Popular", active: true },
-    { title: "Newest", active: false },
+    { title: "Popular", active: true, value: Order.RANKING },
+    { title: "Newest", active: false, value: Order.NEWEST },
   ]);
   const [products, setProducts] = useState<IProductItem[]>([]);
-  const [first, setFirst] = useState<number>(10);
+  const [order, setOrder] = useState<Order>(Order.RANKING);
 
-  const { error, loading, data } = useQuery(GET_POSTS, {
-    variables: {
-      order: "RANKING",
-      first,
-    },
-  });
+  const data = useGetPosts({ order, first: 10 });
 
   function toggleTab(indexTab: number) {
     const newTabs = tabs.map((tab: ITabItem, index) => {
@@ -29,21 +30,31 @@ const Home: React.FC = () => {
         : { ...tab, active: false };
     });
 
+    const newOrder = newTabs.filter((tab) => tab.active === true);
+
     setTabs(newTabs);
+    setOrder(newOrder[0].value);
   }
 
-  function handlePagination() {
-    setFirst((oldFirst) => oldFirst + 10);
-  }
-
-  function handleGetPosts() {}
-
-  useEffect(() => {
-    console.log(process.env.API_ACCESS_TOKEN);
+  const getAndFormatData = useCallback(() => {
     if (data) {
-      console.log(data);
+      const newProducts = data.edges.map((item: any) => {
+        const { id, name, description, votesCount, thumbnail } = item.node;
+        return {
+          id,
+          name,
+          description,
+          votesCount,
+          thumbnail: thumbnail.url,
+        };
+      });
+      setProducts(newProducts);
     }
   }, [data]);
+
+  useEffect(() => {
+    getAndFormatData();
+  }, [getAndFormatData]);
 
   return (
     <Container>
@@ -57,6 +68,7 @@ const Home: React.FC = () => {
           <Tab toggleTab={toggleTab} tabItems={tabs} />
         </TabContainer>
       </Header>
+      <ProductList data={products} />
     </Container>
   );
 };

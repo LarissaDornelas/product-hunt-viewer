@@ -7,5 +7,5 @@ export interface IProductItem {
 }
 
 export interface IProductList {
-  data: IProductItem;
+  data: IProductItem[];
 }

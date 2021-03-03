@@ -6,6 +6,7 @@ import { Card } from "./Card";
 import { ProductSummary } from "./ProductSummary";
 import { ProductImage } from "./ProductImage";
 import { VoteButton } from "./VoteButton";
+import { ProductList } from "./ProductList";
 
 export {
   ProfileImage,
@@ -16,4 +17,5 @@ export {
   ProductSummary,
   ProductImage,
   VoteButton,
+  ProductList,
 };
