@@ -1,15 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 
-import { ProfileImage, DateWidget, SearchButton } from "components";
-import { Container, Header } from "./styles";
+import { ProfileImage, DateWidget, SearchButton, Tab } from "components";
+import { Container, Header, DataContainer, TabContainer } from "./styles";
+import { ITabItem } from "components/Tab/types";
 
 const Home: React.FC = () => {
+  const [tabs, setTabs] = useState<ITabItem[]>([
+    { title: "Popular", active: true },
+    { title: "Newest", active: false },
+  ]);
+
+  function toggleTab(indexTab: number) {
+    const newTabs = tabs.map((tab: ITabItem, index) => {
+      return index === indexTab
+        ? { ...tab, active: true }
+        : { ...tab, active: false };
+    });
+
+    setTabs(newTabs);
+  }
+
   return (
     <Container>
       <Header>
-        <ProfileImage />
-        <DateWidget />
-        <SearchButton />
+        <DataContainer>
+          <ProfileImage />
+          <DateWidget />
+          <SearchButton />
+        </DataContainer>
+        <TabContainer>
+          <Tab toggleTab={toggleTab} tabItems={tabs} />
+        </TabContainer>
       </Header>
     </Container>
   );
