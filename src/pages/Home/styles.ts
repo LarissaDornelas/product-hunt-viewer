@@ -3,10 +3,9 @@ import { theme } from "styles/theme";
 
 const Container = styled.div`
   display: flex;
-  width: 100%;
-  max-width: 200px;
-  justify-content: center;
-  align-items: center;
+
+  justify-content: flex-start;
+  align-items: flex-start;
   position: relative;
 `;
 
@@ -21,6 +20,8 @@ const Header = styled.div`
   right: 200px;
   padding: 25px;
   background: ${theme.colors.white};
+  box-shadow: 0px 54px 41px -33px rgba(0, 0, 0, 0.52);
+  z-index: 2;
 
   @media (max-width: 800px) {
     left: 0;
@@ -40,4 +41,23 @@ const TabContainer = styled.div`
   width: 100%;
 `;
 
-export { Container, Header, DataContainer, TabContainer };
+const CardList = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  margin: 130px 200px 0 200px;
+
+  @media (max-width: 800px) {
+    margin: 130px 0 0 0;
+  }
+`;
+
+export const CardContent = styled.div``;
+
+export const ProductImage = styled.div``;
+
+export const Ranking = styled.div``;
+
+export { Container, Header, DataContainer, TabContainer, CardList };

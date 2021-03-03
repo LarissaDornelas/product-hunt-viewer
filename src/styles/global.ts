@@ -4,18 +4,21 @@ import { theme } from "./theme";
 
 export const GlobalStyle = createGlobalStyle`
 ${normalize}
-*{
-    @import url(../assets/fonts/Pragmatica-ExtraLight.ttf);
+
+html{    @import url(../assets/fonts/Pragmatica-ExtraLight.ttf);
     font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 400;
     letter-spacing: 1px;
-}
 
+#root{
+    width: 100%;
+}
+}
+   
 body{
     display: flex;
-    justify-content: center;
-    align-items:center;
     height: 100vh;
+    width: 100%;
     background-color: ${theme.colors.primary}
 }
 `;

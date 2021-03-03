@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 
-import { ProfileImage, DateWidget, SearchButton, Tab } from "components";
-import { Container, Header, DataContainer, TabContainer } from "./styles";
+import { ProfileImage, DateWidget, SearchButton, Tab, Card } from "components";
+import {
+  Container,
+  Header,
+  DataContainer,
+  TabContainer,
+  CardList,
+} from "./styles";
 import { ITabItem } from "components/Tab/types";
 
 const Home: React.FC = () => {
@@ -32,6 +38,9 @@ const Home: React.FC = () => {
           <Tab toggleTab={toggleTab} tabItems={tabs} />
         </TabContainer>
       </Header>
+      <CardList>
+        <Card>Olá</Card>
+      </CardList>
     </Container>
   );
 };
