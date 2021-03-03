@@ -10,8 +10,6 @@ const Home: React.FC = () => {
         <ProfileImage />
         <DateWidget />
         <SearchButton />
-
-        {/* <Tab titles={[]} active={} />  */}
       </Header>
     </Container>
   );
