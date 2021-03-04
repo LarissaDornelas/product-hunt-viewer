@@ -25,7 +25,7 @@ const GET_POSTS = gql`
 `;
 
 export const useGetPosts = (options: IUseGetPosts): any => {
-  const { data } = useQuery(GET_POSTS, {
+  const { data, fetchMore, loading, error } = useQuery(GET_POSTS, {
     variables: {
       ...options,
     },
@@ -33,5 +33,10 @@ export const useGetPosts = (options: IUseGetPosts): any => {
 
   console.log("áq", data);
 
-  return data?.posts;
+  return {
+    data,
+    fetchMore,
+    loading,
+    error,
+  };
 };
