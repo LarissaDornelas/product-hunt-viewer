@@ -1,12 +1,9 @@
-import React, { createElement, useCallback } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
-import { render, cleanup, fireEvent } from "@testing-library/react";
+import { render, cleanup } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import { renderHook } from "@testing-library/react-hooks";
-import renderer from "react-test-renderer";
 
 import { ProductList } from "components";
-import { act } from "react-dom/test-utils";
 
 describe("Component: ProductList", () => {
   beforeEach(() => {

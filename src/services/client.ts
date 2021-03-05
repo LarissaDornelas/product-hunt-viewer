@@ -8,14 +8,9 @@ import * as dotenv from "dotenv";
 dotenv.config();
 
 const errorLink = onError(({ graphQLErrors, networkError }) => {
-  if (graphQLErrors) {
-    graphQLErrors.map(({ message }) => {
-      console.log(message);
-      return 0;
-    });
-  }
-
   if (networkError) console.log(`NetworkError: ${networkError}`);
+  if (graphQLErrors)
+    if (networkError) console.log(`NetworkError: ${networkError}`);
 });
 
 const httpLink = from([

@@ -22,7 +22,7 @@ const Home: React.FC = () => {
   const [order, setOrder] = useState<Order>(Order.RANKING);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
 
-  const { data, fetchMore } = useGetPosts({ order, first: 10 });
+  const { data, fetchMore, error } = useGetPosts({ order, first: 10 });
 
   function toggleTab(indexTab: number) {
     const newTabs = tabs.map((tab: ITabItem, index) => {
@@ -56,7 +56,7 @@ const Home: React.FC = () => {
 
   const handleFormatData = useCallback(() => {
     if (data) {
-      const newProducts = data.posts.edges.map((item: any) => {
+      const newProducts = data.posts?.edges.map((item: any) => {
         const { id, name, description, votesCount, thumbnail } = item.node;
         return {
           id,
@@ -87,19 +87,25 @@ const Home: React.FC = () => {
         </TabContainer>
       </Header>
 
-      {order === Order.RANKING && (
-        <ProductList
-          data={products}
-          handleFetchMore={handleFetchMore}
-          loading={isLoadingMore}
-        />
-      )}
-      {order === Order.NEWEST && (
-        <ProductList
-          data={products}
-          handleFetchMore={handleFetchMore}
-          loading={isLoadingMore}
-        />
+      {!error ? (
+        <>
+          {order === Order.RANKING && (
+            <ProductList
+              data={products}
+              handleFetchMore={handleFetchMore}
+              loading={isLoadingMore}
+            />
+          )}
+          {order === Order.NEWEST && (
+            <ProductList
+              data={products}
+              handleFetchMore={handleFetchMore}
+              loading={isLoadingMore}
+            />
+          )}
+        </>
+      ) : (
+        <p>An error ocurred</p>
       )}
     </Container>
   );

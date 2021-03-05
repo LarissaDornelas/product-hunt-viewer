@@ -1,11 +1,12 @@
 import { createGlobalStyle } from "styled-components";
 import { normalize } from "styled-normalize";
 import { theme } from "./theme";
+import "../assets/fonts/Pragmatica-ExtraLight.ttf";
 
 export const GlobalStyle = createGlobalStyle`
 ${normalize}
 
-html{    @import url(../assets/fonts/Pragmatica-ExtraLight.ttf);
+html{ 
     font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 400;
     letter-spacing: 1px;

@@ -3,7 +3,6 @@ import { theme } from "styles/theme";
 
 const Container = styled.div`
   display: flex;
-
   justify-content: flex-start;
   align-items: flex-start;
   position: relative;

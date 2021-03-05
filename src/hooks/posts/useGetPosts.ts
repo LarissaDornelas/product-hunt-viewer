@@ -29,7 +29,7 @@ export const useGetPosts = (options: IUseGetPosts): any => {
     variables: {
       ...options,
     },
-    errorPolicy: "all",
+    notifyOnNetworkStatusChange: true,
   });
 
   return {
