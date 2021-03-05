@@ -1,7 +1,7 @@
 import { gql, useQuery } from "@apollo/client";
 import { IUseGetPosts } from "./types";
 
-const GET_POSTS = gql`
+export const GET_POSTS = gql`
   query getPosts($first: Int!, $after: String, $order: PostsOrder!) {
     posts(first: $first, after: $after, order: $order) {
       pageInfo {

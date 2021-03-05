@@ -75,7 +75,7 @@ const Home: React.FC = () => {
   }, [handleFormatData]);
 
   return (
-    <Container>
+    <Container data-testid="home-container">
       <Header>
         <DataContainer>
           <ProfileImage />
