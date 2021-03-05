@@ -25,6 +25,16 @@ const Button = styled.button`
     outline: none;
   }
 
+  :hover {
+    .icon {
+      color: ${theme.colors.white};
+    }
+
+    background-color: ${theme.colors.secondary};
+    color: ${theme.colors.white};
+    border: 1px solid ${theme.colors.secondary};
+  }
+
   span {
     margin: -12px 0 2px 0;
     font-size: 0.725rem;

@@ -21,7 +21,7 @@ const DataContainer = styled.div`
   margin: 0px 100px 0px 15px;
   text-overflow: ellipsis;
   h1 {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     padding: 0px;
     margin: 0px 0px 5px 0px;
     font-weight: 400;
