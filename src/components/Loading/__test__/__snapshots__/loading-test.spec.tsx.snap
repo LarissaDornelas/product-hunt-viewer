@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: Loading matches snapshot 1`] = `
+<div
+  className="sc-dQppl iutGYG"
+  data-testid="loading-container"
+/>
+`;

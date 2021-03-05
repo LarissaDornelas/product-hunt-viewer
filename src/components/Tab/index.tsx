@@ -7,9 +7,10 @@ const Tab: React.FC<ITab> = (props) => {
   const { tabItems, toggleTab } = props;
 
   return (
-    <Container>
+    <Container data-testid="tab-container">
       {tabItems.map((item: ITabItem, index: number) => (
         <TabItem
+          data-testid="tab-item"
           key={index}
           active={item.active}
           onClick={() => toggleTab(index)}

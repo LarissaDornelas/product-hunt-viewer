@@ -10,7 +10,7 @@ const VoteButton: React.FC<IVoteButton> = (props) => {
   const { votes } = props;
 
   return (
-    <Container>
+    <Container data-testid="vote-button-container">
       <Button>
         <FontAwesomeIcon className="icon" icon={faSortUp} size="2x" />
         <span>{votes}</span>

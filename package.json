@@ -7,9 +7,6 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "@fortawesome/react-fontawesome": "^0.1.14",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
     "@types/date-fns": "^2.6.0",
     "@types/jest": "^26.0.15",
     "@types/node": "^12.0.0",
@@ -50,5 +47,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@types/react-test-renderer": "^17.0.1",
+    "@types/testing-library__jest-dom": "^5.9.5",
+    "jest-dom": "^4.0.0",
+    "react-test-render": "^1.1.2",
+    "react-test-renderer": "^17.0.1"
   }
 }

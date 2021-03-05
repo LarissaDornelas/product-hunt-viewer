@@ -11,7 +11,7 @@ const ProductSummary: React.FC<IProductItem> = (props) => {
 
   return (
     <Card>
-      <Container>
+      <Container data-testid="product-summary-container">
         <ProductImage imageUrl={thumbnail} size={ImageSize.MEDIUM} />
         <DataContainer>
           <h1>{name}</h1>

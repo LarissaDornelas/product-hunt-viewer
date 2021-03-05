@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: ProductSummary matches snapshot 1`] = `
+<div
+  className="sc-jSgupP egTPbs"
+  data-testid="card-container"
+>
+  <div
+    className="sc-gKsewC cKXJqI"
+    data-testid="product-summary-container"
+  >
+    <div
+      className="sc-fubCfw fIGNPb"
+      data-testid="product-image-container"
+      size="40px"
+    />
+    <div
+      className="sc-iBPRYJ kzcYjd"
+    >
+      <h1>
+        test
+      </h1>
+      <p>
+        test
+      </p>
+    </div>
+    <div
+      className="sc-pFZIQ iKywqp"
+      data-testid="vote-button-container"
+    >
+      <button
+        className="sc-jrAGrp hDXgCT"
+      >
+        <svg
+          aria-hidden="true"
+          className="svg-inline--fa fa-sort-up fa-w-10 fa-2x icon"
+          data-icon="sort-up"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          style={Object {}}
+          viewBox="0 0 320 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M279 224H41c-21.4 0-32.1-25.9-17-41L143 64c9.4-9.4 24.6-9.4 33.9 0l119 119c15.2 15.1 4.5 41-16.9 41z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+        <span>
+          200
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;

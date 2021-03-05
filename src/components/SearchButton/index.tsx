@@ -7,7 +7,7 @@ import { theme } from "styles/theme";
 
 const SearchButton: React.FC = () => {
   return (
-    <Container>
+    <Container data-testid="search-button-container">
       <FontAwesomeIcon
         icon={faSearch}
         color={theme.colors.fontPrimary}

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: DateWidget matches snapshot 1`] = `
+<div
+  className="sc-gsTCUz cKpBUT"
+  data-testid="date-widget-container"
+>
+  <p>
+    Today, 3rd Mar 
+  </p>
+</div>
+`;

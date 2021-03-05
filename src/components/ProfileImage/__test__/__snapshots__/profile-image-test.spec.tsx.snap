@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: ProfileImage matches snapshot 1`] = `
+<div
+  className="sc-bdfBwQ kSzhve"
+  data-testid="profile-image-container"
+/>
+`;

@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: Tab matches snapshot 1`] = `
+<div
+  className="sc-hKgILt lfwwFe"
+  data-testid="tab-container"
+>
+  <div
+    className="sc-eCssSg jksizx"
+    data-testid="tab-item"
+    onClick={[Function]}
+  >
+    popular
+  </div>
+  <div
+    className="sc-eCssSg hbFUcZ"
+    data-testid="tab-item"
+    onClick={[Function]}
+  >
+    newest
+  </div>
+</div>
+`;

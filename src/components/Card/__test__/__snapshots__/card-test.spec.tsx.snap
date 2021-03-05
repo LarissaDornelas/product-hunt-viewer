@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: Card matches snapshot 1`] = `
+<div
+  className="sc-jSgupP egTPbs"
+  data-testid="card-container"
+>
+  <h1>
+    I'm a children
+  </h1>
+</div>
+`;

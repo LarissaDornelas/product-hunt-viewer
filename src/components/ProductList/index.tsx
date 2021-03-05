@@ -32,7 +32,7 @@ const ProductList: React.FC<IProductList> = (props) => {
   }, [scrollObserver, loadMore]);
 
   return (
-    <Container>
+    <Container data-testid="product-list-container">
       {data.length > 0 && (
         <>
           {data.map((item: IProductItem, index: number) => (

@@ -6,7 +6,9 @@ import { IProfileImage } from "./types";
 const ProfileImage: React.FC<IProfileImage> = (props) => {
   const { imageUrl } = props;
 
-  return <Container imageUrl={imageUrl} />;
+  return (
+    <Container data-testid="profile-image-container" imageUrl={imageUrl} />
+  );
 };
 
 export { ProfileImage };
