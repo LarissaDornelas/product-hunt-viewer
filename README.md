@@ -18,12 +18,12 @@
   <img src="./src/assets/images/application.gif" alt="Product Hunt Viewer" width="200"></a>
 
 </div>
-## Tecnologies
- 
- - ReactJS
- - Styled Components
- - Apollo Client
 
+## Tecnologies
+
+- ReactJS
+- Styled Components
+- Apollo Client
 
 ## How To Run
 
