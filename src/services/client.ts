@@ -1,20 +1,21 @@
 import { ApolloClient, InMemoryCache, from, HttpLink } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import { onError } from "@apollo/client/link/error";
+import { relayStylePagination } from "@apollo/client/utilities";
 
 import * as dotenv from "dotenv";
 
 dotenv.config();
 
-console.log(process.env.REACT_APP_API_ACCESS_TOKEN);
-
 const errorLink = onError(({ graphQLErrors, networkError }) => {
   if (graphQLErrors) {
     graphQLErrors.map(({ message }) => {
-      alert(`Graphql error ${message}`);
+      console.log(message);
       return 0;
     });
   }
+
+  if (networkError) console.log(`NetworkError: ${networkError}`);
 });
 
 const httpLink = from([
@@ -31,5 +32,13 @@ const authLink = setContext((_: any, { headers }: { headers: any }) => ({
 
 export const client = new ApolloClient({
   link: authLink.concat(httpLink),
-  cache: new InMemoryCache(),
+  cache: new InMemoryCache({
+    typePolicies: {
+      Query: {
+        fields: {
+          posts: relayStylePagination(["order"]),
+        },
+      },
+    },
+  }),
 });

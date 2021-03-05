@@ -13,4 +13,18 @@ const Container = styled.div`
   }
 `;
 
-export { Container };
+const LoadingContainer = styled.div`
+  display: flex;
+  padding: 30px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+`;
+const ObservableContainer = styled.div`
+  display: flex;
+  height: 5px;
+  justify-content: center;
+  align-items: center;
+`;
+
+export { Container, LoadingContainer, ObservableContainer };

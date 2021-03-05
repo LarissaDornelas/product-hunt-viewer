@@ -8,4 +8,6 @@ export interface IProductItem {
 
 export interface IProductList {
   data: IProductItem[];
+  loading: boolean;
+  handleFetchMore: () => void;
 }

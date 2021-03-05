@@ -29,9 +29,8 @@ export const useGetPosts = (options: IUseGetPosts): any => {
     variables: {
       ...options,
     },
+    errorPolicy: "all",
   });
-
-  console.log("áq", data);
 
   return {
     data,

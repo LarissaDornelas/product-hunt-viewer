@@ -20,8 +20,9 @@ const Home: React.FC = () => {
   ]);
   const [products, setProducts] = useState<IProductItem[]>([]);
   const [order, setOrder] = useState<Order>(Order.RANKING);
+  const [isLoadingMore, setIsLoadingMore] = useState(false);
 
-  const data = useGetPosts({ order, first: 10 });
+  const { data, fetchMore } = useGetPosts({ order, first: 10 });
 
   function toggleTab(indexTab: number) {
     const newTabs = tabs.map((tab: ITabItem, index) => {
@@ -34,11 +35,28 @@ const Home: React.FC = () => {
 
     setTabs(newTabs);
     setOrder(newOrder[0].value);
+    setProducts([]);
   }
 
-  const getAndFormatData = useCallback(() => {
+  async function handleFetchMore() {
     if (data) {
-      const newProducts = data.edges.map((item: any) => {
+      if (data.posts.pageInfo.hasNextPage) {
+        setIsLoadingMore(true);
+        await fetchMore({
+          variables: {
+            order,
+            first: 10,
+            after: data.posts.pageInfo.endCursor,
+          },
+        });
+        setIsLoadingMore(false);
+      }
+    }
+  }
+
+  const handleFormatData = useCallback(() => {
+    if (data) {
+      const newProducts = data.posts.edges.map((item: any) => {
         const { id, name, description, votesCount, thumbnail } = item.node;
         return {
           id,
@@ -53,8 +71,8 @@ const Home: React.FC = () => {
   }, [data]);
 
   useEffect(() => {
-    getAndFormatData();
-  }, [getAndFormatData]);
+    handleFormatData();
+  }, [handleFormatData]);
 
   return (
     <Container>
@@ -68,7 +86,21 @@ const Home: React.FC = () => {
           <Tab toggleTab={toggleTab} tabItems={tabs} />
         </TabContainer>
       </Header>
-      <ProductList data={products} />
+
+      {order === Order.RANKING && (
+        <ProductList
+          data={products}
+          handleFetchMore={handleFetchMore}
+          loading={isLoadingMore}
+        />
+      )}
+      {order === Order.NEWEST && (
+        <ProductList
+          data={products}
+          handleFetchMore={handleFetchMore}
+          loading={isLoadingMore}
+        />
+      )}
     </Container>
   );
 };
