@@ -40,7 +40,7 @@ $ cd product-hunt-viewer
 $ npm install
 ```
 
-The next step is to create a .env file in your project with these enviroment variables:
+The next step is to create a .env file in your project with these environment variables:
 
 ```
 REACT_APP_API_URL='https://api.producthunt.com/v2/api/graphql'
@@ -49,7 +49,7 @@ REACT_APP_API_ACCESS_TOKEN=YOUR_ACCESS_TOKEN
 
 If you don't know how to get the api access token please [click here](https://api.producthunt.com/v2/docs/oauth_client_only_authentication/oauth_token_ask_for_client_level_token).
 
-After following all the steps you can start the application with this comand:
+After following all the steps you can start the application with this command:
 
 ```bash
 
@@ -58,7 +58,7 @@ $ npm start
 
 Note: If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
 
-Obs: To run the tests, please you can run the command below:
+Obs: To run the tests, you can run the command below:
 
 ```bash
 $ npm run test
