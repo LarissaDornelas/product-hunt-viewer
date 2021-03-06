@@ -61,5 +61,5 @@ Note: If you're using Linux Bash for Windows, [see this guide](https://www.howto
 Obs: To run the tests, please you can run the command below:
 
 ```bash
-$ npm run tests
+$ npm run test
 ```
